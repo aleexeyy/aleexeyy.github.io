@@ -38,3 +38,20 @@ function showSlides(n) {
 setInterval(function() {
     nextSlide()
 }, 3000)
+
+
+let but = document.getElementsByClassName("button")
+but[0].addEventListener("click", function() {
+   var templateParams = {
+      name: 'James',
+      notes: 'Check this out!'
+   };
+   
+   emailjs.send('service_lmvyqhs', 'template_le9shi3', templateParams)
+      .then(function(response) {
+         console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+
+})
